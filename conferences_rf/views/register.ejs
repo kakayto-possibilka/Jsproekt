@@ -1,0 +1,32 @@
+<%- include('header') %>
+  <h2><%= title %></h2>
+
+  <% if (errors.length > 0) { %>
+    <div style="color: red; margin-bottom: 15px;">
+      <ul>
+        <% for(let error of errors) { %>
+          <li><%= error %></li>
+        <% } %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form method="POST" action="/register">
+    <input name="login" placeholder="Логин" required><br><br>
+    <input name="password" type="password" placeholder="Пароль" required><br><br>
+    <input name="fullName" placeholder="ФИО" required><br><br>
+    <input name="phone" placeholder="Телефон" required><br><br>
+    <input name="email" placeholder="Email" required><br><br>
+    <button>Отправить заявку</button>
+  </form>
+
+  <% if (userData) { %> 
+<h3>Вы успешно зарегистрировались!</h3>
+<ul>
+  <li><strong>Логин:</strong> <%= userData.login %></li>
+  <li><strong>ФИО:</strong> <%= userData.fullName %></li>
+  <li><strong>Телефон:</strong> <%= userData.phone %></li>
+  <li><strong>Email:</strong> <%= userData.email %></li>
+</ul>
+  <% } %>
+<%- include('footer') %>

@@ -1,0 +1,19 @@
+<%- include('header') %>
+<h2><%= title %></h2>
+
+<p>Пользователь: <strong><%= user.fio %></strong></p>
+
+<table border="1">
+  <tr>
+    <th>Аудитория</th>
+    <th>Статус заявки</th>
+  </tr>
+  
+  <% requests.forEach(req => { %>
+    <tr>
+      <td><%= req.room_name %></td>
+      <td><%= req.status %></td>
+    </tr>
+  <% }) %>
+</table>
+<%- include('footer') %>
