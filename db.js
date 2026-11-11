@@ -10,7 +10,7 @@ const hash = (pwd) => bcrypt.hashSync(pwd, 10)
 
 db.pragma('foreign_keys = ON')
 // столбы для создания юзера, комнат и заявок
-
+//1
 db.exec(`
     CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
